@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Form</title>
+  <script src="../back-end/node_modules/jquery/dist/jquery.min.js"></script>
+</head>
+
+<body>
+  <div>
+    <!-- form 表单post提交，默认会刷新到 action 页面 enter键自动提交 -->
+    <!-- <form action="http://localhost:3008/user" method="POST" name="post提交">
+      <p>name: <input type="text" name="username"></p>
+      <p>password: <input type="password" name="password"></p>
+      <input type="submit" value="提交">
+    </form> -->
+
+
+    <!-- form 表单get 提交, 默认刷新action 页面 -->
+    <!-- <form action="http://localhost:3008/user" method="GET" name="get提交">
+      <p>name: <input type="text" name="username"></p>
+      <p>password: <input type="password" name="password"></p>
+      <input type="submit" value="提交">
+    </form> -->
+
+    <!-- 无刷新页面提交 -->
+    <!-- <form action="http://localhost:3008/user" method="POST" name="post提交" target="targetIfr">
+      <p>name: <input type="text" name="username"></p>
+      <p>password: <input type="password" name="password"></p>
+      <input type="submit" value="提交">
+    </form>
+    <iframe name="targetIfr" style="display:none"></iframe> -->
+
+
+    <!-- 通过js 进行表单的提交 存在问题，页面会跳转刷新-->
+    <!-- <form action="http://localhost:3008/user" method="POST" name="jsForm" target="targetIfr" id="jsForm">
+      <p>name: <input type="text" name="username"></p>
+      <p>password: <input type="password" name="password"></p>
+      <button id="btn">提交</button>
+    </form> -->
+
+    <!-- 通过jquery 进行表单的提交 存在问题，并阻止页面跳转刷新-->
+    <!-- <form action="http://localhost:3008/user" method="POST" name="jqueryForm" target="targetIfr" id="jqueryForm">
+      <p>name: <input type="text" name="username"></p>
+      <p>password: <input type="password" name="password"></p>
+      <button id="jqbtn">提交</button>
+    </form> -->
+
+    <!-- ajax 请求 -->
+    <!-- <form method="POST">
+      <p>name: <input type="text" name="username"></p>
+      <p>password: <input type="password" name="password"></p>
+      <div id="jqbtn">提交</div>
+    </form> -->
+
+    <!-- FormData -->
+    <form action="http://localhost:3008/user" method="POST" enctype="multipart/form-data">
+      <p>name: <input type="text" name="username"></p>
+      <!-- <p>password: <input type="password" name="password"></p> -->
+      <p><input type="file" name="file"></p>
+      <input type="submit" value="提交">
+    </form>
+  </div>
+  <script>
+    // 通过js 进行表单的提交 存在 问题，页面会跳转刷新
+    // var btn = document.getElementById('btn')
+    // var jsForm = document.getElementById('jsForm')
+
+    // btn.onclick = function () {
+    //   jsForm.submit()
+    // }
+
+    // 通过jquery 进行表单的提交 存在问题，并阻止页面跳转刷新
+    // $('#jqbtn').click(function () {
+    //   $('#jqueryForm').submit(function () {
+    //     console.log('submit success')
+    //     return false
+    //   })
+    // })
+
+    // 通过ajax请求, ajax请求req 的content-type 为application/json
+    // var params = {
+    //   name: '**',
+    //   password: '***'
+    // }
+    // $('#jqbtn').click(function () {
+    //   $.ajax({
+    //     url: 'http://localhost:3008/user',
+    //     type: 'POST',
+    //     data: JSON.stringify(params),
+    //     contentType: "application/json", // 默认以formdata形式发送给后台
+    //     dataType: "json",
+    //     success: function (res) {
+    //       console.log(res)
+    //     }
+    //   })
+    // })
+  </script>
+</body>
+
+</html>
